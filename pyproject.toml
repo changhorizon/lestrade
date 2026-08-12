@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lestrade"
-version = "0.1.1"
+version = "0.1.2"
 description = "OpenAI-compatible RAG chatbot — plug in your knowledge base and go"
 readme = "README.md"
 license = { text = "MIT" }
