@@ -121,20 +121,14 @@ GET /health
 
 ## Pluggable Architecture
 
-Lestrade provides four extension points. Each comes with a default implementation and can be swapped via environment variables.
+Lestrade provides four extension points, each swappable via environment variables.
 
-```
-┌──────────────┐
-│  Chunking    │   text → chunks        (env: LESTRADE_CHUNKING)
-├──────────────┤
-│  Retrieval   │   query → ranked docs  (env: LESTRADE_RETRIEVAL)
-├──────────────┤
-│  Response    │   context → prompt     (env: LESTRADE_RESPONSE)
-│              │   raw LLM → formatted  │
-├──────────────┤
-│  Ingestion   │   data source → texts  (env: LESTRADE_INGESTION)
-└──────────────┘
-```
+| Plugin | Input | Output | Env Variable |
+|--------|-------|--------|--------------|
+| Chunking | text | chunks | `LESTRADE_CHUNKING` |
+| Retrieval | query + index | ranked docs | `LESTRADE_RETRIEVAL` |
+| Response | context + raw LLM output | prompt + formatted text | `LESTRADE_RESPONSE` |
+| Ingestion | data source | texts | `LESTRADE_INGESTION`
 
 ### Creating a Custom Plugin
 
