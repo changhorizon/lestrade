@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+.pytest_cache/
+.ruff_cache/
+data/faiss_index/*
+data/ollama/*
+data/kb/*
+!data/faiss_index/.gitkeep
+!data/ollama/.gitkeep
+!data/kb/.gitkeep
